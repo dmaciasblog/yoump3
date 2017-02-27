@@ -1,3 +1,5 @@
+#!/bin/bash
+
 clear
 echo "##############################"
 echo "#                            #"
@@ -8,7 +10,7 @@ youtube-dl $1
 touch link
 echo "$1" > link
 num=$(cut -d= -f2 link)
-echo -e -n "Dele nombre a su archivo de audio sin espacios: "
+echo -e -n "Dele nombre a su archivo de audio: "
 read name
 ffmpeg -i *$num* "$name.mp3"
 rm link *$num*
